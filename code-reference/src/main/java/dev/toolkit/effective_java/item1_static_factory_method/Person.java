@@ -1,4 +1,4 @@
-package dev.toolkit.effective_java.static_factory_method;
+package dev.toolkit.effective_java.item1_static_factory_method;
 
 /**
  * [ 명확한 인스턴스 반환 메서드명 ]

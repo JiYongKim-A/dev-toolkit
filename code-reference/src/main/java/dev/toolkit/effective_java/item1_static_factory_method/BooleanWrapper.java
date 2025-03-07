@@ -1,4 +1,4 @@
-package dev.toolkit.effective_java.static_factory_method;
+package dev.toolkit.effective_java.item1_static_factory_method;
 
 /**
  * [ Boolean 값 캐싱 ]

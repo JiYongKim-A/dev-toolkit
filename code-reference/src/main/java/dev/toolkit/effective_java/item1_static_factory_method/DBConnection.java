@@ -1,4 +1,4 @@
-package dev.toolkit.effective_java.static_factory_method;
+package dev.toolkit.effective_java.item1_static_factory_method;
 
 /**
  * [ 객체 생성 비용이 크거나 복잡한 객체 생성을 단순화 및 캡술화 ]

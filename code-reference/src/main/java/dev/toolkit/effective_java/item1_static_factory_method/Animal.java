@@ -1,4 +1,4 @@
-package dev.toolkit.effective_java.static_factory_method;
+package dev.toolkit.effective_java.item1_static_factory_method;
 
 /**
  * [ 인터페이스 기반 정적 팩터리 메서드 ]

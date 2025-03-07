@@ -1,4 +1,4 @@
-package dev.toolkit.effective_java.static_factory_method;
+package dev.toolkit.effective_java.item1_static_factory_method;
 
 /**
  * [ 복잡한 객체 생성을 단순화 ] - (Builder 패턴과 결합)
