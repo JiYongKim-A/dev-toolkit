@@ -9,5 +9,4 @@ public enum CoffeeBasePrice {
 
     public double getPrice() { return price; }
 
-    public void setPrice(double newPrice) { this.price = newPrice; } // 동
 }
