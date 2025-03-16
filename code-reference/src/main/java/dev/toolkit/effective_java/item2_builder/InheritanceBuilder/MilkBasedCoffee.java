@@ -4,8 +4,14 @@ public abstract class MilkBasedCoffee extends Coffee {
     public enum MilkType {
         WHOLE(0.0), SKIM(0.0), SOY(0.5), OAT(0.5), ALMOND(0.5);
         private final double price;
-        MilkType(double price) { this.price = price; }
-        public double getPrice() { return price; }
+
+        MilkType(double price) {
+            this.price = price;
+        }
+
+        public double getPrice() {
+            return price;
+        }
     }
 
     private final MilkType milkType;
@@ -29,7 +35,6 @@ public abstract class MilkBasedCoffee extends Coffee {
         }
 
 
-
         @Override
         protected abstract T self(); // ✅ 하위 클래스에서 구현하도록 강제
 
@@ -38,12 +43,15 @@ public abstract class MilkBasedCoffee extends Coffee {
     }
 
     MilkBasedCoffee(Builder<?> builder, double price) { // ✅ 생성자는 protected로 설정
-        super(builder,price);
+        super(builder, price);
         this.milkType = builder.milkType;
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\n-------------------------- 우유 선택 --------------------------\n우유 타입 = " + milkType;
+    protected void buildString(StringBuilder sb) {
+        super.buildString(sb);
+        sb.append("\n-------------------------- 우유 선택 --------------------------\n")
+                .append("우유 타입 = ").append(milkType);
+
     }
 }

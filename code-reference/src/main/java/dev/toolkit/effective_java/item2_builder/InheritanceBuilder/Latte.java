@@ -67,14 +67,22 @@ public class Latte extends MilkBasedCoffee {
     }
 
     @Override
+    protected void buildString(StringBuilder sb) {
+        super.buildString(sb);
+        sb.append("\n-------------------------- 라떼 선택 --------------------------\n")
+                .append("라떼 스타일 = ").append(latteStyle)
+                .append(", 밀크 비율 = ").append(milkToCoffeeRatio)
+                .append(", 라떼 아트 = ").append(latteArt)
+                .append("\n-------------------------- 최종 가격 --------------------------\n")
+                .append("최종 가격 = $ ").append(getPrice())
+                .append("\n-------------------------------------------------------------\n");
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + "\n-------------------------- 라떼 선택 --------------------------\n" +
-                "라떼 스타일 = " + latteStyle +
-                ", 밀크 비율 = " + milkToCoffeeRatio +
-                ", 라떼 아트 = " + latteArt +
-                "\n-------------------------- 최종 가격 --------------------------\n" +
-                "최종 가격 = $ " + getPrice()+
-                "\n-------------------------------------------------------------\n";
+        StringBuilder sb = new StringBuilder();
+        buildString(sb);
+        return sb.toString();
     }
 
 

@@ -9,22 +9,40 @@ public abstract class Coffee {
     public enum Size {
         TALL(0.0), GRANDE(0.5), VENTI(1.0), TRENTA(1.5);
         private final double price;
-        Size(double price) { this.price = price; }
-        public double getPrice() { return price; }
+
+        Size(double price) {
+            this.price = price;
+        }
+
+        public double getPrice() {
+            return price;
+        }
     }
 
     public enum Shots {
         SINGLE(0.0), DOUBLE(0.5), TRIPLE(1.0);
         private final double price;
-        Shots(double price) { this.price = price; }
-        public double getPrice() { return price; }
+
+        Shots(double price) {
+            this.price = price;
+        }
+
+        public double getPrice() {
+            return price;
+        }
     }
 
     public enum Topping {
         CINNAMON_POWDER(0.2), CHOCOLATE_POWDER(0.3), WHIPPED_CREAM(0.5);
         private final double price;
-        Topping(double price) { this.price = price; }
-        public double getPrice() { return price; }
+
+        Topping(double price) {
+            this.price = price;
+        }
+
+        public double getPrice() {
+            return price;
+        }
     }
 
     private final double price; // 가격을 final로 저장
@@ -83,12 +101,18 @@ public abstract class Coffee {
         return price;
     }
 
+    protected void buildString(StringBuilder sb) {
+        sb.append("\n-------------------------- 기본 선택 --------------------------\n")
+                .append("원두 = ").append(beanType)
+                .append(", 사이즈 = ").append(size)
+                .append(", 샷 = ").append(shots)
+                .append(", 토핑 = ").append(toppings.isEmpty() ? "없음" : toppings);
+    }
+
     @Override
     public String toString() {
-        return "\n-------------------------- 기본 선택 --------------------------\n" +
-                "원두 = " + beanType +
-                ", 사이즈 = " + size +
-                ", 샷 = " + shots +
-                ", 토핑 = " + (toppings.isEmpty() ? "없음" : toppings);
+        StringBuilder sb = new StringBuilder();
+        buildString(sb);
+        return sb.toString();
     }
 }

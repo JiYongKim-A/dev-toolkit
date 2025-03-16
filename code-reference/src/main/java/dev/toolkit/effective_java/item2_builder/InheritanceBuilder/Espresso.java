@@ -40,11 +40,19 @@ public class Espresso extends NonMilkCoffee {
     }
 
     @Override
+    protected void buildString(StringBuilder sb) {
+        super.buildString(sb);
+        sb.append("\n-------------------------- 에스프레소 선택 --------------------------\n")
+                .append("카페인 강도 = ").append(caffeine)
+                .append("\n-------------------------- 최종 가격 --------------------------\n")
+                .append("최종 가격 = $ ").append(getPrice())
+                .append("\n-------------------------------------------------------------\n");
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + "\n-------------------------- 카페인 선택 --------------------------\n" +
-                " 카페인 강도 = " + caffeine +
-                "\n-------------------------- 최종 가격 --------------------------\n" +
-                "최종 가격 = $ " + getPrice()+
-                "\n-------------------------------------------------------------\n";
+        StringBuilder sb = new StringBuilder();
+        buildString(sb);
+        return sb.toString();
     }
 }

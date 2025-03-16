@@ -27,13 +27,16 @@ public abstract class NonMilkCoffee extends Coffee {
         protected abstract NonMilkCoffee build();
     }
 
-    NonMilkCoffee(Builder<?> builder,double price) {
-        super(builder,price);
+    NonMilkCoffee(Builder<?> builder, double price) {
+        super(builder, price);
         this.strength = builder.strength;
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\n-------------------------- 강도 선택 --------------------------\n커피 강도 타입 = " + strength;
+    protected void buildString(StringBuilder sb) {
+        super.buildString(sb);
+        sb.append("\n-------------------------- 강도 선택 --------------------------\n")
+                .append("커피 강도 타입 = ")
+                .append(strength);
     }
 }
