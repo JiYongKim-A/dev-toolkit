@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.google.protobuf' version '0.8.18'
 }
 
 group = 'dev.toolkit'
@@ -10,8 +11,18 @@ repositories {
 }
 
 dependencies {
+    implementation('com.fasterxml.jackson.core:jackson-databind:2.18.3')
+    implementation 'com.google.protobuf:protobuf-java:3.24.4' // Protobuf Java 라이브러리
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'build/generated/source/proto/main/java' // Protobuf에서 생성된 Java 파일 경로 추가
+        }
+    }
 }
 
 test {

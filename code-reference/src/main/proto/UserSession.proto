@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dev.toolkit.effective_java.attach.serialize.protobuf;
+
+option java_package = "dev.toolkit.effective_java.attach.serialize.protobuf";
+option java_outer_classname = "UserSessionProto";
+
+message UserSession {
+  string sessionId = 1;
+  string username = 2;
+  int64 lastAccessTime = 3;
+}
