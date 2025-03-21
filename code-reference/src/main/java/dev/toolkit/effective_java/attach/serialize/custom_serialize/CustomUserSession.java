@@ -16,8 +16,10 @@ public class CustomUserSession implements Serializable {
     private String username;
     private long lastAccessTime;
 
-    public CustomUserSession() {
-    }
+//    writeObject()와 readObject() 메서드를 커스터마이즈하여 직접 직렬화 및 역직렬화 로직을 구현하고 있기 때문에
+//      -> JVM은 기본 생성자를 호출할 필요가 없기 때문에 예외가 발생 하지 않는다.
+//    public CustomUserSession() {
+//    }
 
     public CustomUserSession(String sessionId, String username, long lastAccessTime) {
         this.sessionId = sessionId;
